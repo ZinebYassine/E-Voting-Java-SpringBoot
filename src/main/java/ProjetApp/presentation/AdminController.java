@@ -21,5 +21,9 @@ public class AdminController {
 		model.addAttribute("list",list);
 		return "indexAdmin";
 	}
+	@GetMapping("/addFormAdmin")
+	public String getAddFormAdmin(Model model){
+		return "formAjouterAdmin";
+	}
 
 }
