@@ -46,14 +46,21 @@ public class ServiceAdmin implements IServiceAdmin {
 
 	@Override
 	public List<User> listerAd() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return ur.findAll();
 	}
 
 	@Override
 	public Admin rechercherAd(Integer id) {
+		Optional<User> c=ur.findById(id);
+		if(c.isEmpty()) {
+			throw new RuntimeException("Admin not found");
+		}
+		else {
+			return (Admin) c.get();
+		}
 	
-		return null;
+		
 	}
 
 }
